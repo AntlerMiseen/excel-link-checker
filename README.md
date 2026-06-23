@@ -21,6 +21,7 @@
 ├── link_checker_gui.py     # 图形界面入口（tkinter，推荐）
 ├── 示例链接.xlsx            # 测试用示例文件
 ├── tests/                  # 单元测试（116 个）
+├── setup.bat               # Windows 一键安装脚本（推荐零基础用户使用）
 ├── requirements.txt        # 运行依赖
 ├── requirements-dev.txt    # 开发依赖（含 pytest）
 ├── .gitignore
@@ -43,26 +44,42 @@
 pip install requests openpyxl pandas
 ```
 
-## 快速开始
+## 快速开始（零基础）
 
-### GUI 版（推荐）
+### 1. 安装 Python
 
-```powershell
-python link_checker_gui.py
-```
+前往 [python.org](https://www.python.org/downloads/) 下载安装，**安装时务必勾选 "Add Python to PATH"**。
+
+### 2. 运行安装脚本
+
+双击项目文件夹中的 **`setup.bat`**，脚本会自动：
+
+1. 创建独立的 Python 虚拟环境（不影响系统）
+2. 安装所需依赖
+3. 启动程序
+
+### 3. 使用
 
 1. 点击 **📁 浏览** 选择 Excel 文件
 2. 点击 **▶ 开始检测**
-3. 查看实时进度和结果表格
-4. 点击 **📂 打开结果文件** 查看输出的 Excel
+3. 在底部点击「保存完整版」或「保存仅标黄版」
+4. 按钮变为「打开」后可点击直接查看结果
 
-### 命令行版
+> 结果文件保存在输入文件同目录下的 **result/** 文件夹中。
+
+### 以后怎么启动
+
+双击 `setup.bat` 即可，虚拟环境已存在时会跳过安装直接启动。
+
+### 高级用户：手动运行
 
 ```powershell
+# GUI 版（推荐）
+python link_checker_gui.py
+
+# 命令行版
 python link_checker.py "你的文件.xlsx"
 ```
-
-或直接运行后输入文件路径。
 
 ## 功能特性
 
